@@ -2,760 +2,188 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <meta
-    name="description"
-    content="Terms of Service for Blurred Encounters."
-  >
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Terms of Service for Blurred Encounters.">
   <title>Terms of Service | Blurred Encounters</title>
-
   <style>
-    :root {
-      --background: #070611;
-      --card: rgba(25, 20, 55, 0.9);
-      --purple: #a879ff;
-      --pink: #ff75bb;
-      --blue: #75cfff;
-      --gold: #ffd88a;
-      --white: #ffffff;
-      --muted: #c8c0da;
-      --border: rgba(255, 255, 255, 0.14);
-      --danger: #ff829f;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      min-height: 100vh;
-      padding: 30px 0;
-      color: var(--white);
-      background:
-        radial-gradient(
-          circle at 15% 10%,
-          rgba(117, 207, 255, 0.16),
-          transparent 30%
-        ),
-        radial-gradient(
-          circle at 85% 15%,
-          rgba(255, 117, 187, 0.15),
-          transparent 32%
-        ),
-        linear-gradient(
-          160deg,
-          #04030b,
-          var(--background),
-          #100821
-        );
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.7;
-    }
-
-    a {
-      color: var(--blue);
-    }
-
-    a:hover {
-      color: var(--pink);
-    }
-
-    .container {
-      width: min(960px, 92%);
-      margin: 0 auto;
-    }
-
-    .top-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 25px;
-      gap: 16px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--white);
-      font-weight: 800;
-      letter-spacing: 0.04em;
-      text-decoration: none;
-      text-transform: uppercase;
-    }
-
-    .moon {
-      font-size: 1.8rem;
-    }
-
-    .back-button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 10px 17px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      color: var(--white);
-      background: rgba(255, 255, 255, 0.06);
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    .policy-card {
-      padding: clamp(25px, 5vw, 55px);
-      border: 1px solid var(--border);
-      border-radius: 30px;
-      background: var(--card);
-      box-shadow: 0 30px 90px rgba(0, 0, 0, 0.35);
-      backdrop-filter: blur(18px);
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      margin-bottom: 18px;
-      padding: 7px 12px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      color: var(--gold);
-      background: rgba(255, 216, 138, 0.08);
-      font-size: 0.82rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-    }
-
-    h1 {
-      margin-bottom: 12px;
-      font-size: clamp(2.4rem, 7vw, 4.8rem);
-      line-height: 1;
-    }
-
-    .gradient-text {
-      color: transparent;
-      background:
-        linear-gradient(
-          90deg,
-          var(--blue),
-          var(--purple),
-          var(--pink)
-        );
-      background-clip: text;
-      -webkit-background-clip: text;
-    }
-
-    .updated {
-      margin-bottom: 30px;
-      color: var(--muted);
-    }
-
-    .notice {
-      margin: 25px 0 35px;
-      padding: 18px;
-      border: 1px solid rgba(255, 216, 138, 0.3);
-      border-radius: 17px;
-      color: var(--muted);
-      background: rgba(255, 216, 138, 0.07);
-    }
-
-    .notice strong {
-      color: var(--gold);
-    }
-
-    section {
-      padding: 28px 0;
-      border-top: 1px solid var(--border);
-    }
-
-    section:first-of-type {
-      border-top: none;
-    }
-
-    h2 {
-      margin-bottom: 14px;
-      font-size: 1.55rem;
-    }
-
-    h3 {
-      margin: 22px 0 8px;
-      font-size: 1.08rem;
-    }
-
-    p {
-      margin-bottom: 13px;
-      color: var(--muted);
-    }
-
-    ul {
-      display: grid;
-      margin: 14px 0 14px 22px;
-      gap: 9px;
-      color: var(--muted);
-    }
-
-    li strong {
-      color: var(--white);
-    }
-
-    .warning {
-      padding: 17px;
-      border-left: 4px solid var(--danger);
-      border-radius: 8px;
-      color: var(--muted);
-      background: rgba(255, 130, 159, 0.08);
-    }
-
-    .contact-box {
-      padding: 22px;
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.045);
-    }
-
-    .footer {
-      padding: 32px 10px 10px;
-      color: var(--muted);
-      text-align: center;
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 600px) {
-      .top-bar {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .back-button {
-        width: 100%;
-      }
-    }
-  </style>
+:root{
+  --bg:#070611;--card:rgba(25,20,55,.92);--blue:#75cfff;
+  --purple:#a879ff;--pink:#ff75bb;--gold:#ffd88a;
+  --white:#fff;--muted:#c8c0da;--border:rgba(255,255,255,.14);
+  --danger:#ff829f;--good:#79e7b1;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  min-height:100vh;padding:28px 0;color:var(--white);
+  background:
+    radial-gradient(circle at 12% 8%,rgba(117,207,255,.15),transparent 28%),
+    radial-gradient(circle at 88% 12%,rgba(255,117,187,.14),transparent 30%),
+    linear-gradient(155deg,#04030b,var(--bg),#100821);
+  font-family:Arial,Helvetica,sans-serif;line-height:1.7
+}
+a{color:var(--blue)}
+a:hover{color:var(--pink)}
+.container{width:min(960px,92%);margin:auto}
+.top{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:24px}
+.brand{display:flex;align-items:center;gap:10px;color:var(--white);font-weight:900;
+  letter-spacing:.04em;text-transform:uppercase;text-decoration:none}
+.brand .moon{font-size:1.8rem}
+.back{padding:10px 17px;border:1px solid var(--border);border-radius:999px;
+  color:var(--white);background:rgba(255,255,255,.06);font-weight:800;text-decoration:none}
+.card{padding:clamp(25px,5vw,54px);border:1px solid var(--border);border-radius:29px;
+  background:var(--card);box-shadow:0 30px 90px rgba(0,0,0,.35)}
+.eyebrow{display:inline-flex;margin-bottom:18px;padding:7px 12px;border:1px solid var(--border);
+  border-radius:999px;color:var(--gold);background:rgba(255,216,138,.08);
+  font-size:.82rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase}
+h1{margin-bottom:12px;font-size:clamp(2.4rem,7vw,4.6rem);line-height:1}
+.gradient{color:transparent;background:linear-gradient(90deg,var(--blue),var(--purple),var(--pink));
+  -webkit-background-clip:text;background-clip:text}
+.updated{margin-bottom:28px;color:var(--muted)}
+.notice,.warning,.good{margin:22px 0;padding:17px;border-radius:16px;color:var(--muted)}
+.notice{border:1px solid rgba(255,216,138,.3);background:rgba(255,216,138,.07)}
+.warning{border-left:4px solid var(--danger);background:rgba(255,130,159,.08)}
+.good{border-left:4px solid var(--good);background:rgba(121,231,177,.07)}
+section{padding:26px 0;border-top:1px solid var(--border)}
+section:first-of-type{border-top:none}
+h2{margin-bottom:13px;font-size:1.52rem}
+h3{margin:20px 0 8px;font-size:1.08rem}
+p{margin-bottom:12px;color:var(--muted)}
+ul,ol{display:grid;gap:8px;margin:12px 0 12px 23px;color:var(--muted)}
+strong{color:var(--white)}
+.contact{padding:20px;border:1px solid var(--border);border-radius:17px;
+  background:rgba(255,255,255,.045)}
+.navbox{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:22px}
+.navbox a{padding:14px;border:1px solid var(--border);border-radius:14px;
+  background:rgba(255,255,255,.04);text-decoration:none}
+footer{padding:30px 8px 8px;color:var(--muted);text-align:center;font-size:.9rem}
+@media(max-width:650px){
+  .top{align-items:flex-start;flex-direction:column}.back{width:100%;text-align:center}
+  .navbox{grid-template-columns:1fr}
+}
+</style>
 </head>
-
 <body>
-
   <div class="container">
-
-    <div class="top-bar">
-      <a class="brand" href="index.html">
-        <span class="moon">☾</span>
-        <span>Blurred Encounters</span>
-      </a>
-
-      <a class="back-button" href="index.html">
-        ← Return to Home
-      </a>
+    <div class="top">
+      <a class="brand" href="index.html"><span class="moon">☾</span><span>Blurred Encounters</span></a>
+      <a class="back" href="index.html">← Return to Home</a>
     </div>
-
-    <main class="policy-card">
-
-      <div class="eyebrow">
-        Adults 18+ Only
-      </div>
-
-      <h1>
-        Terms of
-        <span class="gradient-text">Service</span>
-      </h1>
-
-      <p class="updated">
-        Last updated: August 27, 2026
-      </p>
-
-      <div class="notice">
-        <strong>Please read these Terms carefully.</strong>
-        By accessing or using Blurred Encounters, you agree to
-        these Terms, our Privacy Policy, Community Guidelines,
-        Safety Rules, and any additional policies displayed on
-        the service.
-      </div>
-
-      <section>
-        <h2>1. Agreement to These Terms</h2>
-
-        <p>
-          These Terms of Service form a binding agreement
-          between you and Blurred Encounters regarding your
-          access to and use of the Blurred Encounters website,
-          waitlist, membership features, profiles, lounges,
-          messaging, voice, blurred video, and any related
-          services that may be offered now or in the future.
-        </p>
-
-        <p>
-          If you do not agree to these Terms, do not access,
-          register for, purchase, or use the service.
-        </p>
-      </section>
-
-      <section>
-        <h2>2. Adults Only</h2>
-
-        <p>
-          Blurred Encounters is strictly limited to adults who
-          are at least 18 years old and who have reached the
-          legal age of majority where they live.
-        </p>
-
-        <ul>
-          <li>
-            You may not use the service if you are under 18.
-          </li>
-
-          <li>
-            You may not create an account for a minor.
-          </li>
-
-          <li>
-            You may not allow a minor to access your account.
-          </li>
-
-          <li>
-            You may not display, discuss, request, imitate, or
-            distribute sexual content involving minors.
-          </li>
-
-          <li>
-            You must leave the service immediately if you
-            become aware that another user may be under 18.
-          </li>
-        </ul>
-
-        <p>
-          We may request age-verification information at any
-          time. Refusing or failing verification may result in
-          suspension or permanent removal.
-        </p>
-
-        <div class="warning">
-          Any suspected sexual exploitation of a minor,
-          grooming, trafficking, or child sexual abuse material
-          may be preserved and reported to the appropriate
-          authorities or child-protection organizations.
-        </div>
-      </section>
-
-      <section>
-        <h2>3. Purpose of the Service</h2>
-
-        <p>
-          Blurred Encounters is intended to provide adults with
-          a private, online-only space for anonymous
-          conversation, fantasy-based interaction, emotional
-          connection, voice communication, and blurred video
-          interaction.
-        </p>
-
-        <p>
-          Blurred Encounters is not intended to be an escort
-          service, prostitution service, physical dating
-          service, trafficking platform, or marketplace for
-          sexual services.
-        </p>
-
-        <p>
-          The service does not guarantee that use of the
-          platform will be acceptable within your marriage,
-          partnership, religion, workplace, or personal
-          relationship. You are responsible for understanding
-          and honoring your own relationship agreements and
-          personal boundaries.
-        </p>
-      </section>
-
-      <section>
-        <h2>4. Online-Only Rule</h2>
-
-        <p>
-          Blurred Encounters is designed for interaction that
-          remains on the platform and online.
-        </p>
-
-        <p>You may not use the service to:</p>
-
-        <ul>
-          <li>
-            Arrange an in-person sexual encounter.
-          </li>
-
-          <li>
-            Solicit or offer prostitution, escorting, sexual
-            services, or compensated sexual activity.
-          </li>
-
-          <li>
-            Exchange home addresses, hotel locations, or other
-            precise meeting locations for sexual purposes.
-          </li>
-
-          <li>
-            Pressure another person to move communication
-            off-platform.
-          </li>
-
-          <li>
-            Use the platform to facilitate trafficking,
-            exploitation, coercion, or abuse.
-          </li>
-        </ul>
-
-        <p>
-          We may suspend or terminate accounts that attempt to
-          evade this online-only rule.
-        </p>
-      </section>
-
-      <section>
-        <h2>5. Accounts and Aliases</h2>
-
-        <p>
-          Certain features may require an account. You agree to
-          provide accurate information when requested,
-          including accurate age-verification and payment
-          information.
-        </p>
-
-        <p>
-          You may use an alias publicly, but you may not use an
-          alias to impersonate another person, misrepresent your
-          age, commit fraud, evade enforcement, or hide illegal
-          conduct.
-        </p>
-
-        <p>
-          You are responsible for maintaining the security of
-          your login information and for all activity occurring
-          through your account.
-        </p>
-
-        <p>
-          Notify us immediately if you believe your account has
-          been accessed without authorization.
-        </p>
-      </section>
-
-      <section>
-        <h2>6. Consent and Personal Boundaries</h2>
-
-        <p>
-          Consent must be voluntary, informed, specific,
-          mutual, and ongoing.
-        </p>
-
-        <ul>
-          <li>
-            Silence is not consent.
-          </li>
-
-          <li>
-            Previous consent is not future consent.
-          </li>
-
-          <li>
-            Consent may be withdrawn at any moment.
-          </li>
-
-          <li>
-            A user who says “stop,” leaves, disconnects, blocks,
-            or becomes unresponsive must not be pursued.
-          </li>
-
-          <li>
-            Users may not pressure, manipulate, threaten, shame,
-            blackmail, or coerce another person.
-          </li>
-        </ul>
-
-        <p>
-          You must respect another user’s selected boundaries,
-          communication preferences, and allowed interaction
-          types.
-        </p>
-      </section>
-
-      <section>
-        <h2>7. Prohibited Conduct</h2>
-
-        <p>You may not use Blurred Encounters to:</p>
-
-        <ul>
-          <li>
-            Engage in illegal activity or encourage another
-            person to break the law.
-          </li>
-
-          <li>
-            Exploit, groom, sexualize, or endanger a minor.
-          </li>
-
-          <li>
-            Share child sexual abuse material or sexual content
-            depicting anyone under 18.
-          </li>
-
-          <li>
-            Upload or share non-consensual intimate imagery.
-          </li>
-
-          <li>
-            Threaten to expose, embarrass, blackmail, or
-            “out” another person.
-          </li>
-
-          <li>
-            Record, photograph, screenshot, screen-capture, or
-            distribute another user’s interaction without
-            express permission.
-          </li>
-
-          <li>
-            Reveal another user’s legal name, address, phone
-            number, workplace, family information, account
-            details, or other identifying information.
-          </li>
-
-          <li>
-            Harass, stalk, threaten, intimidate, or repeatedly
-            contact someone who has blocked or rejected you.
-          </li>
-
-          <li>
-            Promote trafficking, prostitution, escorting, or
-            paid sexual services.
-          </li>
-
-          <li>
-            Post content involving rape, coercion, incest,
-            bestiality, extreme violence, bodily harm, or other
-            illegal or non-consensual activity.
-          </li>
-
-          <li>
-            Impersonate another person or create deceptive,
-            fraudulent, or fake verification documents.
-          </li>
-
-          <li>
-            Send spam, scams, malware, phishing links, or
-            unauthorized advertisements.
-          </li>
-
-          <li>
-            Attempt to disable, bypass, reverse-engineer, or
-            remove privacy, moderation, age-verification, or
-            face-blurring features.
-          </li>
-
-          <li>
-            Create another account after being permanently
-            banned.
-          </li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>8. Blurred Video and Privacy Limitations</h2>
-
-        <p>
-          Face-blurring and other visual effects are intended
-          to reduce visual identification, but they cannot
-          guarantee complete anonymity, confidentiality, or
-          protection from recognition.
-        </p>
-
-        <p>
-          Other identifying details may remain visible or
-          audible, including your voice, tattoos, scars,
-          jewelry, clothing, room, background, location clues,
-          screen name, or personal statements.
-        </p>
-
-        <p>
-          You are responsible for deciding what to show, say,
-          or reveal. Do not display identification documents,
-          financial information, private messages, addresses,
-          license plates, children, or other sensitive details.
-        </p>
-
-        <p>
-          Blurred Encounters is not responsible for a user who
-          violates the no-recording rule or uses external
-          equipment or software to capture an interaction,
-          although we may suspend, remove, or report that user.
-        </p>
-      </section>
-
-      <section>
-        <h2>9. User Content</h2>
-
-        <p>
-          “User Content” includes profile information,
-          messages, text, images, audio, video, feedback, and
-          other material you submit, transmit, display, or make
-          available through the service.
-        </p>
-
-        <p>
-          You retain ownership of your lawful User Content.
-          You grant Blurred Encounters a limited,
-          non-exclusive, worldwide license to host, process,
-          transmit, display, moderate, and store User Content
-          only as reasonably necessary to operate, secure,
-          improve, and enforce the service.
-        </p>
-
-        <p>
-          You represent that you have the legal right and all
-          required permissions to submit your User Content.
-        </p>
-
-        <p>
-          You may not upload recorded sexually explicit images
-          or videos unless Blurred Encounters expressly enables
-          that feature and provides additional verification,
-          consent, release, and recordkeeping requirements.
-        </p>
-      </section>
-
-      <section>
-        <h2>10. Moderation and Enforcement</h2>
-
-        <p>
-          We may review reports, account activity, public
-          profile information, and content when reasonably
-          necessary to protect users, investigate violations,
-          comply with law, or operate the service.
-        </p>
-
-        <p>We may take actions including:</p>
-
-        <ul>
-          <li>Issuing a warning.</li>
-          <li>Removing content.</li>
-          <li>Limiting features.</li>
-          <li>Ending an active session.</li>
-          <li>Requiring additional verification.</li>
-          <li>Temporarily suspending an account.</li>
-          <li>Permanently banning an account.</li>
-          <li>Preserving relevant records.</li>
-          <li>Reporting suspected illegal activity.</li>
-        </ul>
-
-        <p>
-          We are not required to provide advance warning before
-          acting when we reasonably believe immediate action is
-          necessary for safety, legal compliance, fraud
-          prevention, or platform security.
-        </p>
-
-        <p>
-          Moderation decisions may be based on available
-          information and may not always be perfect. Users may
-          contact us to request review of an enforcement
-          decision.
-        </p>
-      </section>
-
-      <section>
-        <h2>11. Reporting Emergencies and Misconduct</h2>
-
-        <p>
-          Use the platform’s report and block tools whenever
-          possible. Reports should contain enough information
-          for us to identify the account, interaction, and
-          alleged violation.
-        </p>
-
-        <p>
-          Blurred Encounters is not an emergency service. If
-          you or another person is in immediate danger, contact
-          local emergency services.
-        </p>
-
-        <p>
-          Reports involving suspected minors, trafficking,
-          exploitation, credible threats, non-consensual
-          intimate imagery, or serious violence may receive
-          priority review.
-        </p>
-      </section>
-
-      <section>
-        <h2>12. Memberships, Payments, and Renewals</h2>
-
-        <p>
-          Some features may require a paid membership. Prices,
-          included features, billing periods, and renewal terms
-          will be shown before purchase.
-        </p>
-
-        <p>
-          Unless otherwise stated at checkout, recurring
-          memberships automatically renew at the end of each
-          billing period until canceled.
-        </p>
-
-        <p>
-          You authorize the applicable payment provider to
-          charge the payment method you submit for recurring
-          membership fees, taxes, and authorized purchases.
-        </p>
-
-        <p>
-          You may cancel future renewals through the method
-          provided with your purchase. Cancellation normally
-          stops future billing but does not automatically
-          refund an already-started billing period unless
-          required by law or stated in our Refund Policy.
-        </p>
-
-        <p>
-          Prices and features may change. Material pricing
-          changes for recurring memberships will be
-          communicated before the new price takes effect where
-          required.
-        </p>
-
-        <p>
-          Fraudulent chargebacks, stolen payment methods, or
-          payment disputes made after receiving authorized
-          services may result in account suspension.
-        </p>
-      </section>
-
-      <section>
-        <h2>13. Test, Beta, and Early-Access Features</h2>
-
-        <p>
-          Some parts of Blurred Encounters may be offered as a
-          test, preview, waitlist, prototype, beta, or
-          early-access feature.
-        </p>
-
-        <p>
-          Test features may be incomplete, unavailable,
-          changed, suspended, or discontinued at any time.
-          Participation does not guarantee permanent access or
-          that a proposed feature will be released.
-        </p>
-      </section>
-
-      <section>
-        <h2>14. Intellectual Property</h2>
-
-        <p>
-          Blurred Encounters, its name, logos, visual designs,
-          software, page layouts, text, graphics, membership
-          names, lounge names, and original platform materials
-          are 
+    <main class="card">
+      <div class="eyebrow">Adults 18+ Only</div>
+      <h1>Terms <span class="gradient">of Service</span></h1>
+      <p class="updated">Last updated: August 27, 2026</p>
+      <div class="notice"><strong>Please read these Terms carefully before using the service.</strong></div>
+      <section><h2>1. Agreement to These Terms</h2>
+<p>These Terms govern access to the Blurred Encounters website, waitlist, memberships,
+profiles, lounges, messaging, voice, blurred video, and related services. By using the
+service, you agree to these Terms and the linked policies. Do not use the service if you
+do not agree.</p></section><section><h2>2. Adults Only</h2>
+<p>You must be at least 18 years old and have reached the legal age of majority where you
+live. You may not create an account for a minor, allow a minor to use your account, or
+misrepresent anyone's age.</p>
+<div class="warning"><strong>Zero tolerance:</strong> content or conduct involving the
+sexual exploitation, grooming, endangerment, or sexualization of a minor is prohibited
+and may be preserved and reported where required by law.</div></section><section><h2>3. Purpose and Online-Only Rule</h2>
+<p>Blurred Encounters is intended for private, online-only adult conversation,
+fantasy-based interaction, emotional connection, voice, and blurred video.</p>
+<p>It is not an escort service, prostitution service, trafficking platform, or marketplace
+for sexual services. Users may not arrange sexual meetups, exchange precise locations
+for sexual purposes, or pressure another person to move communication off-platform.</p></section><section><h2>4. Relationship Boundaries</h2>
+<p>The service does not decide what is acceptable within a marriage or relationship.
+Each user is responsible for understanding and honoring their own agreements,
+commitments, and boundaries. Blurred Encounters does not promise that use will prevent
+relationship conflict or be considered non-cheating by a partner.</p></section><section><h2>5. Accounts and Aliases</h2>
+<p>You may use an alias publicly, but you may not impersonate another person, hide illegal
+conduct, evade enforcement, or provide false age-verification or payment information.
+You are responsible for securing your login information and account activity.</p></section><section><h2>6. Consent</h2>
+<ul>
+<li>Consent must be voluntary, informed, specific, mutual, and ongoing.</li>
+<li>Silence, prior consent, or a past interaction is not current consent.</li>
+<li>Consent may be withdrawn at any time.</li>
+<li>If a user says stop, disconnects, blocks, leaves, or becomes unresponsive, contact must stop.</li>
+<li>Coercion, manipulation, threats, blackmail, shame, or pressure are prohibited.</li>
+</ul></section><section><h2>7. Prohibited Conduct</h2>
+<ul>
+<li>Illegal activity, fraud, scams, phishing, malware, spam, or account theft.</li>
+<li>Harassment, stalking, threats, hate, doxxing, intimidation, or repeated unwanted contact.</li>
+<li>Sexual content involving minors or anyone presented as a minor.</li>
+<li>Non-consensual intimate imagery, revenge content, hidden recording, or extortion.</li>
+<li>Trafficking, prostitution, escorting, paid sexual services, or arranging physical encounters.</li>
+<li>Content involving coercion, sexual violence, incest, bestiality, or unlawful exploitation.</li>
+<li>Recording, screenshotting, or distributing another user's interaction without express permission.</li>
+<li>Attempting to disable or bypass blur, age checks, safety controls, moderation, or security.</li>
+<li>Creating new accounts to evade a suspension or permanent ban.</li>
+</ul></section><section><h2>8. Blur and Anonymity Limitations</h2>
+<p>Face blurring is intended to reduce identification but cannot guarantee anonymity.
+A voice, tattoo, scar, room, clothing, location clue, screen name, or personal statement
+may reveal identity. Do not display identification documents, financial details,
+addresses, license plates, children, or other sensitive information.</p></section><section><h2>9. User Content</h2>
+<p>You retain ownership of lawful content you submit. You grant Blurred Encounters a
+limited, non-exclusive license to host, process, transmit, display, moderate, and store
+that content as needed to operate, secure, improve, and enforce the service.</p>
+<p>You represent that you have the legal right and required consent to submit the content.
+Uploaded explicit recordings may remain disabled unless separate verification,
+consent, recordkeeping, and legal controls are implemented.</p></section><section><h2>10. Moderation and Enforcement</h2>
+<p>Blurred Encounters may investigate reports, review relevant account activity, remove
+content, limit features, end sessions, require verification, suspend or ban accounts,
+preserve evidence, and report suspected illegal conduct. Immediate action may occur
+without advance warning when safety, fraud, legal, or security risks are present.</p></section><section><h2>11. Payments and Renewals</h2>
+<p>Paid features, prices, billing periods, taxes, renewal terms, and cancellation methods
+will be shown before purchase. Recurring memberships may renew until canceled when
+clearly disclosed at checkout. Cancellation stops future renewals but does not
+automatically create a refund for a billing period already started, except where required
+by law or stated in the Payments and Refunds Policy.</p></section><section><h2>12. Beta and Early Access</h2>
+<p>Waitlist, prototype, beta, and early-access features may be incomplete, changed,
+paused, or discontinued. Participation does not guarantee that a proposed feature will
+launch or remain available.</p></section><section><h2>13. Intellectual Property</h2>
+<p>The Blurred Encounters name, logo, visual design, software, page layout, original text,
+membership names, lounge names, and platform materials are owned by or licensed to
+Blurred Encounters. You may not copy, sell, scrape, reverse-engineer, or commercially
+exploit them without written permission.</p></section><section><h2>14. Third-Party Services</h2>
+<p>Hosting, analytics, email, age verification, moderation, payments, security, or
+communications may be provided by third parties with their own terms and privacy
+policies. Blurred Encounters is not responsible for third-party outages, policies,
+or unauthorized conduct.</p></section><section><h2>15. No Guarantee of Results</h2>
+<p>We do not guarantee matches, conversations, responses, emotional satisfaction,
+relationship improvement, fantasy fulfillment, safety from every user, or any
+particular result.</p></section><section><h2>16. Disclaimers</h2>
+<p>To the fullest extent permitted by law, the service is provided “as is” and “as
+available.” We do not guarantee uninterrupted service, perfect moderation, complete
+anonymity, error-free operation, or compatibility with every device. The service is not
+medical, legal, financial, mental-health, relationship, or emergency advice.</p></section><section><h2>17. Limitation of Liability</h2>
+<p>To the fullest extent permitted by law, Blurred Encounters and its owners, operators,
+contractors, and providers will not be liable for indirect, incidental, special,
+consequential, exemplary, or punitive damages related to use of the service, user
+misconduct, unauthorized recording, identity exposure, lost data, relationship conflict,
+or service interruption.</p>
+<p>Where liability cannot be excluded, total liability is limited to the greater of the
+amount paid to Blurred Encounters during the six months before the event or fifty U.S.
+dollars, unless applicable law requires otherwise.</p></section><section><h2>18. Indemnification</h2>
+<p>To the extent permitted by law, you agree to defend, indemnify, and hold harmless
+Blurred Encounters and its owners, operators, contractors, and providers from claims,
+losses, damages, and reasonable expenses arising from your misuse, content, violation
+of these Terms, or violation of another person's rights.</p></section><section><h2>19. Suspension and Termination</h2>
+<p>You may stop using the service at any time. We may restrict, suspend, or terminate
+access for policy violations, safety risks, fraud, failed verification, payment misuse,
+or legal and security concerns.</p></section><section><h2>20. Changes</h2>
+<p>We may update the service and these Terms. The date at the top will be changed and
+additional notice will be provided for material changes when required. Continued use
+after the effective date means acceptance of the updated Terms.</p></section><section><h2>21. Governing Law and Disputes</h2>
+<p>These Terms are governed by Michigan law, except where mandatory consumer law applies.
+Before filing a claim, contact us and attempt an informal resolution for at least 30 days.
+A legal proceeding must be filed in a court with proper jurisdiction unless applicable
+law gives you a different right.</p></section><section><h2>22. General Provisions</h2>
+<p>If a provision is unenforceable, the remaining provisions remain effective. Failure to
+enforce a provision is not a waiver. These Terms and incorporated policies form the
+agreement concerning the service.</p></section><section><h2>23. Contact</h2>
+<div class="contact"><p>Questions, reports, appeals, or legal notices:</p>
+<p><a href="mailto:blurredencounters69@gmail.com">blurredencounters69@gmail.com</a></p></div></section>
+    </main>
+    <footer>© <span id="year"></span> Blurred Encounters · Contact:
+      <a href="mailto:blurredencounters69@gmail.com">blurredencounters69@gmail.com</a>
+    </footer>
+  </div>
+  <script>document.getElementById("year").textContent=new Date().getFullYear();</script>
+</body>
+</html>
