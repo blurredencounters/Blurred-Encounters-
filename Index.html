@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Blurred Encounters is a private, adults-only online fantasy connection platform with permanent face blurring, aliases, boundaries, and safety tools."
+  >
+
+  <title>Blurred Encounters</title>
+
+  <style>
+    :root {
+      --background: #080716;
+      --background-light: #12102a;
+      --card: rgba(25, 20, 55, 0.82);
+      --purple: #a879ff;
+      --pink: #ff75bb;
+      --blue: #75cfff;
+      --gold: #ffd88a;
+      --white: #ffffff;
+      --muted: #c4bdd8;
+      --border: rgba(255, 255, 255, 0.13);
+      --danger: #ff7697;
+      --success: #79e7b1;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+      color: var(--white);
+      background:
+        radial-gradient(
+          circle at 20% 10%,
+          rgba(125, 93, 255, 0.22),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 80% 20%,
+          rgba(255, 87, 181, 0.18),
+          transparent 32%
+        ),
+        linear-gradient(
+          160deg,
+          #05040d,
+          var(--background),
+          #0e0920
+        );
+      line-height: 1.6;
+    }
+
+    body::before {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      content: "";
+      opacity: 0.5;
+      background-image:
+        radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.85) 1px,
+          transparent 1px
+        );
+      background-size: 55px 55px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 85px 0;
+    }
+
+    .section-title {
+      margin-bottom: 15px;
+      font-size: clamp(2rem, 4vw, 3.3rem);
+      text-align: center;
+    }
+
+    .section-description {
+      max-width: 750px;
+      margin: 0 auto 45px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .gradient-text {
+      color: transparent;
+      background:
+        linear-gradient(
+          90deg,
+          var(--blue),
+          var(--purple),
+          var(--pink)
+        );
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 12px 22px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      font-weight: 700;
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      color: #090612;
+      background:
+        linear-gradient(
+          90deg,
+          var(--blue),
+          var(--purple),
+          var(--pink)
+        );
+      box-shadow: 0 12px 35px rgba(168, 121, 255, 0.32);
+    }
+
+    .btn-secondary {
+      color: var(--white);
+      border-color: var(--border);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid var(--border);
+      background: rgba(8, 7, 22, 0.86);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 72px;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .brand-symbol {
+      font-size: 1.6rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--white);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      align-items: center;
+      min-height: 760px;
+      padding: 90px 0;
+      gap: 60px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      margin-bottom: 22px;
+      padding: 7px 13px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--gold);
+      background: rgba(255, 216, 138, 0.08);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      margin-bottom: 22px;
+      font-size: clamp(3.2rem, 7vw, 6.5rem);
+      line-height: 0.95;
+    }
+
+    .hero p {
+      max-width: 670px;
+      margin-bottom: 30px;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 32px;
+      gap: 12px;
+    }
+
+    .trust-chip {
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.045);
+      font-size: 0.85rem;
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 520px;
+    }
+
+    .moon {
+      position: absolute;
+      top: 15px;
+      right: 10%;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background:
+        radial-gradient(
+          circle at 34% 30%,
+          #ffffff,
+          #c7c4ff 45%,
+          #7e6bd8 72%,
+          #28204a 100%
+        );
+      box-shadow:
+        0 0 60px rgba(199, 196, 255, 0.45),
+        0 0 120px rgba(168, 121, 255, 0.2);
+    }
+
+    .profile-card {
+      position: absolute;
+      width: 270px;
+      padding: 18px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      background: var(--card);
+      box-shadow: 0 28px 80px rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(20px);
+    }
+
+    .profile-one {
+      top: 150px;
+      left: 0;
+      transform: rotate(-6deg);
+    }
+
+    .profile-two {
+      right: 0;
+      bottom: 10px;
+      transform: rotate(6deg);
+    }
+
+    .profile-image {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 245px;
+      overflow: hidden;
+      border-radius: 20px;
+      background:
+        linear-gradient(
+          145deg,
+          rgba(117, 207, 255, 0.8),
+          rgba(168, 121, 255, 0.85),
+          rgba(255, 117, 187, 0.78)
+        );
+    }
+
+    .silhouette {
+      width: 130px;
+      height: 180px;
+      border-radius: 70px 70px 35px 35px;
+      filter: blur(15px);
+      opacity: 0.75;
+      background: #171326;
+    }
+
+    .profile-info {
+      padding-top: 14px;
+    }
+
+    .profile-info strong {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 1.05rem;
+    }
+
+    .profile-info span {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .safety-badge {
+      position: absolute;
+      top: 95px;
+      left: 35%;
+      z-index: 4;
+      padding: 13px 18px;
+      border: 1px solid rgba(121, 231, 177, 0.3);
+      border-radius: 999px;
+      color: var(--success);
+      background: rgba(7, 29, 24, 0.92);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+      font-weight: 700;
+    }
+
+    .grid {
+      display: grid;
+      gap: 22px;
+    }
+
+    .features-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card {
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      background: var(--card);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+      backdrop-filter: blur(18px);
+    }
+
+    .card-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      margin-bottom: 18px;
+      border-radius: 16px;
+      background:
+        linear-gradient(
+          145deg,
+          rgba(117, 207, 255, 0.2),
+          rgba(168, 121, 255, 0.25),
+          rgba(255, 117, 187, 0.2)
+        );
+      font-size: 1.35rem;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 1.25rem;
+    }
+
+    .card p {
+      color: var(--muted);
+    }
+
+    .lounges-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .lounge-card {
+      min-height: 230px;
+      background:
+        linear-gradient(
+          155deg,
+          rgba(117, 207, 255, 0.12),
+          rgba(168, 121, 255, 0.16),
+          rgba(255, 117, 187, 0.1)
+        ),
+        var(--card);
+    }
+
+    .lounge-tag {
+      display: inline-flex;
+      margin-bottom: 60px;
+      padding: 6px 10px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    .pricing-grid {
+      grid-template-columns: repeat(3, 1fr);
+      align-items: stretch;
+    }
+
+    .price-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .price-card.featured {
+      border-color: rgba(168, 121, 255, 0.65);
+      transform: scale(1.035);
+      box-shadow: 0 25px 80px rgba(168, 121, 255, 0.2);
+    }
+
+    .popular {
+      position: absolute;
+      top: -14px;
+      right: 20px;
+      padding: 6px 11px;
+      border-radius: 999px;
+      color: #120a1b;
+      background: var(--gold);
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    .price {
+      margin: 20px 0;
+      font-size: 2.6rem;
+      font-weight: 800;
+    }
+
+    .price small {
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 400;
+    }
+
+    .feature-list {
+      display: grid;
+      margin-bottom: 26px;
+      gap: 12px;
+      color: var(--muted);
+      list-style: none;
+    }
+
+    .feature-list li::before {
+      margin-right: 8px;
+      color: var(--success);
+      content: "✓";
+    }
+
+    .price-card .btn {
+      width: 100%;
+      margin-top: auto;
+    }
+
+    .boundary-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 42px;
+      gap: 40px;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      background:
+        linear-gradient(
+          145deg,
+          rgba(117, 207, 255, 0.09),
+          rgba(255, 117, 187, 0.09)
+        ),
+        var(--card);
+    }
+
+    .boundary-box h2 {
+      margin-bottom: 18px;
+      font-size: clamp(2rem, 4vw, 3.3rem);
+    }
+
+    .boundary-box p {
+      color: var(--muted);
+    }
+
+    .boundary-rules {
+      display: grid;
+      gap: 13px;
+    }
+
+    .rule {
+      padding: 14px 16px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.045);
+    }
+
+    .join-box {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 36px;
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      background: var(--card);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-group {
+      display: grid;
+      gap: 7px;
+    }
+
+    .form-group.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      outline: none;
+      color: var(--white);
+      background: rgba(255, 255, 255, 0.055);
+    }
+
+    select option {
+      color: #111111;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--purple);
+      box-shadow: 0 0 0 3px rgba(168, 121, 255, 0.12);
+    }
+
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .form-note {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      text-align: center;
+    }
+
+    .footer {
+      padding: 45px 0;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 15px;
+      gap: 18px;
+    }
+
+    .age-gate {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(3, 2, 10, 0.95);
+      backdrop-filter: blur(20px);
+    }
+
+    .age-gate.hidden {
+      display: none;
+    }
+
+    .age-card {
+      width: min(500px, 100%);
+      padding: 38px;
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      background:
+        linear-gradient(
+          145deg,
+          rgba(117, 207, 255, 0.1),
+          rgba(168, 121, 255, 0.16),
+          rgba(255, 117, 187, 0.1)
+        ),
+        #121027;
+      box-shadow: 0 35px 100px rgba(0, 0, 0, 0.55);
+      text-align: center;
+    }
+
+    .age-card h2 {
+      margin-bottom: 15px;
+      font-size: 2rem;
+    }
+
+    .age-card p {
+      margin-bottom: 25px;
+      color: var(--muted);
+    }
+
+    .age-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .notice {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 80;
+      max-width: 340px;
+      padding: 16px 18px;
+      border: 1px solid rgba(121, 231, 177, 0.3);
+      border-radius: 16px;
+      color: var(--success);
+      background: rgba(7, 29, 24, 0.96);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+      transform: translateY(150%);
+      transition: transform 0.3s ease;
+    }
+
+    .notice.show {
+      transform: translateY(0);
+    }
+
+    @media (max-width: 900px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .hero-visual {
+        min-height: 540px;
+      }
+
+      .features-grid,
+      .lounges-grid,
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .price-card.featured {
+        transform: none;
+      }
+
+      .boundary-box {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .section {
+        padding: 65px 0;
+      }
+
+      .hero {
+        padding: 65px 0;
+      }
+
+      .hero h1 {
+        font-size: 3.4rem;
+      }
+
+      .hero-visual {
+        min-height: 485px;
+      }
+
+      .moon {
+        width: 120px;
+        height: 120px;
+      }
+
+      .profile-card {
+        width: 225px;
+      }
+
+      .profile-image {
+        height: 205px;
+      }
+
+      .profile-one {
+        top: 135px;
+      }
+
+      .safety-badge {
+        top: 90px;
+        left: 20%;
+        font-size: 0.8rem;
+      }
+
+      .form-grid,
+      .age-actions {
+        grid-template-columns: 1fr;
+      }
+
+      .join-box,
+      .boundary-box {
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div
+    class="age-gate"
+    id="ageGate"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="ageTitle"
+  >
+    <div class="age-card">
+      <div style="font-size: 3rem; margin-bottom: 12px;">
+        🌙
+      </div>
+
+      <h2 id="ageTitle">
+        Adults Only
+      </h2>
+
+      <p>
+        Blurred Encounters is intended only for adults age 18
+        and older. By entering, you confirm that you are at
+        least 18 years old.
+      </p>
+
+      <div class="age-actions">
+        <button
+          class="btn btn-primary"
+          id="enterButton"
+          type="button"
+        >
+          I Am 18+
+        </button>
+
+        <button
+          class="btn btn-secondary"
+          id="leaveButton"
+          type="button"
+        >
+          Leave
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="notice"
+    id="notice"
+    role="status"
+    aria-live="polite"
+  >
+    Your message is ready to send.
+  </div>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#home">
+        <span class="brand-symbol">☾</span>
+        <span>Blurred Encounters</span>
+      </a>
+
+      <nav
+        class="nav-links"
+        aria-label="Main navigation"
+      >
+        <a href="#features">How It Works</a>
+        <a href="#lounges">Lounges</a>
+        <a href="#safety">Safety</a>
+        <a href="#pricing">Memberships</a>
+        <a href="#join">Join</a>
+      </nav>
+
+      <a class="btn btn-primary" href="#join">
+        Join the Waitlist
+      </a>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="container hero" id="home">
+      <div>
+        <div class="eyebrow">
+          Private • Adults Only • Online Only
+        </div>
+
+        <h1>
+          Blurred faces.
+          <span class="gradient-text">
+            Real connections.
+          </span>
+        </h1>
+
+        <p>
+          Explore fantasies, conversation, attraction, and
+          curiosity in a private online space designed around
+          aliases, permanent face blurring, consent, and clear
+          personal boundaries.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#join">
+            Request Early Access
+          </a>
+
+          <a class="btn btn-secondary" href="#features">
+            See How It Works
+          </a>
+        </div>
+
+        <div class="trust-row">
+          <span class="trust-chip">
+            🔒 Permanent face blur
+          </span>
+
+          <span class="trust-chip">
+            🌙 Private aliases
+          </span>
+
+          <span class="trust-chip">
+            🛡️ Report and block tools
+          </span>
+
+          <span class="trust-chip">
+            💻 No in-person meetups
+          </span>
+        </div>
+      </div>
+
+      <div
+        class="hero-visual"
+        aria-label="Blurred profile preview"
+      >
+        <div class="moon"></div>
+
+        <div class="safety-badge">
+          ✓ Identity Protected
+        </div>
+
+        <article class="profile-card profile-one">
+          <div class="profile-image">
+            <div class="silhouette"></div>
+          </div>
+
+          <div class="profile-info">
+            <strong>Moonlit Mystery</strong>
+            <span>Voice chat • Deep conversation</span>
+          </div>
+        </article>
+
+        <article class="profile-card profile-two">
+          <div class="profile-image">
+            <
