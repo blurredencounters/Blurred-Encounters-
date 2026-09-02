@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Report abuse, safety concerns, or policy violations to Blurred Encounters.">
+  <title>Report Abuse | Blurred Encounters</title>
+  <style>
+:root{
+  --bg:#070611;--card:rgba(25,20,55,.94);--blue:#75cfff;
+  --purple:#a879ff;--pink:#ff75bb;--gold:#ffd88a;
+  --white:#fff;--muted:#c8c0da;--border:rgba(255,255,255,.14);
+  --danger:#ff829f;--good:#79e7b1;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  min-height:100vh;padding:28px 0;color:var(--white);
+  background:
+    radial-gradient(circle at 12% 8%,rgba(117,207,255,.15),transparent 28%),
+    radial-gradient(circle at 88% 12%,rgba(255,117,187,.14),transparent 30%),
+    linear-gradient(155deg,#04030b,var(--bg),#100821);
+  font-family:Arial,Helvetica,sans-serif;line-height:1.7
+}
+a{color:var(--blue)} a:hover{color:var(--pink)}
+.container{width:min(960px,92%);margin:auto}
+.top{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:24px}
+.brand{display:flex;align-items:center;gap:10px;color:var(--white);font-weight:900;
+  letter-spacing:.04em;text-transform:uppercase;text-decoration:none}
+.brand .moon{font-size:1.8rem}
+.back{padding:10px 17px;border:1px solid var(--border);border-radius:999px;
+  color:var(--white);background:rgba(255,255,255,.06);font-weight:800;text-decoration:none}
+.card{padding:clamp(25px,5vw,54px);border:1px solid var(--border);border-radius:29px;
+  background:var(--card);box-shadow:0 30px 90px rgba(0,0,0,.35)}
+.eyebrow{display:inline-flex;margin-bottom:18px;padding:7px 12px;border:1px solid var(--border);
+  border-radius:999px;color:var(--gold);background:rgba(255,216,138,.08);
+  font-size:.82rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase}
+h1{margin-bottom:12px;font-size:clamp(2.4rem,7vw,4.6rem);line-height:1}
+.gradient{color:transparent;background:linear-gradient(90deg,var(--blue),var(--purple),var(--pink));
+  -webkit-background-clip:text;background-clip:text}
+.updated{margin-bottom:28px;color:var(--muted)}
+.notice,.warning,.good{margin:22px 0;padding:17px;border-radius:16px;color:var(--muted)}
+.notice{border:1px solid rgba(255,216,138,.3);background:rgba(255,216,138,.07)}
+.warning{border-left:4px solid var(--danger);background:rgba(255,130,159,.08)}
+.good{border-left:4px solid var(--good);background:rgba(121,231,177,.07)}
+section{padding:26px 0;border-top:1px solid var(--border)}
+section:first-of-type{border-top:none}
+h2{margin-bottom:13px;font-size:1.52rem}
+h3{margin:20px 0 8px;font-size:1.08rem}
+p{margin-bottom:12px;color:var(--muted)}
+ul,ol{display:grid;gap:8px;margin:12px 0 12px 23px;color:var(--muted)}
+strong{color:var(--white)}
+footer{padding:30px 8px 8px;color:var(--muted);text-align:center;font-size:.9rem}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.field{display:grid;gap:7px}.field.full{grid-column:1/-1}
+label{color:var(--muted);font-size:.92rem}
+input,select,textarea{
+  width:100%;padding:13px 14px;color:var(--white);border:1px solid var(--border);
+  border-radius:14px;outline:none;background:rgba(255,255,255,.055);font:inherit
+}
+select option{color:#111} textarea{min-height:145px;resize:vertical}
+input:focus,select:focus,textarea:focus{border-color:var(--purple)}
+.consent{display:flex;align-items:flex-start;gap:10px;padding:13px;border:1px solid var(--border);
+  border-radius:14px;background:rgba(255,255,255,.035)}
+.consent input{width:auto;margin-top:5px;accent-color:var(--purple)}
+.btn{display:inline-flex;justify-content:center;align-items:center;min-height:50px;padding:12px 22px;
+  border:0;border-radius:999px;color:#090511;font-weight:900;cursor:pointer;
+  background:linear-gradient(90deg,var(--blue),var(--purple),var(--pink))}
+.btn[disabled]{opacity:.65;cursor:not-allowed}
+.status{display:none;margin-top:16px;padding:14px;border-radius:14px;text-align:center;font-weight:800}
+.status.success{display:block;color:var(--good);border:1px solid rgba(121,231,177,.35);background:rgba(121,231,177,.08)}
+.status.error{display:block;color:#ffb3c2;border:1px solid rgba(255,130,159,.35);background:rgba(255,130,159,.08)}
+.small{font-size:.86rem;color:var(--muted)}
+.navbox{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:22px}
+.navbox a{padding:14px;border:1px solid var(--border);border-radius:14px;
+  background:rgba(255,255,255,.04);text-decoration:none}
+@media(max-width:650px){
+  .top{align-items:flex-start;flex-direction:column}.back{width:100%;text-align:center}
+  .navbox,.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="top">
+      <a class="brand" href="index.html"><span class="moon">☾</span><span>Blurred Encounters</span></a>
+      <a class="back" href="index.html">← Return to Home</a>
+    </div>
+
+    <main class="card">
+      <div class="eyebrow">Safety & Moderation</div>
+      <h1>Report <span class="gradient">Abuse</span></h1>
+      <p class="updated">Use this form for harassment, threats, suspected minors, impersonation,
+      non-consensual content, recording, blackmail, or other serious policy violations.</p>
+
+      <div class="warning">
+        <strong>Immediate danger:</strong> Call 911 or your local emergency service. This inbox is not
+        monitored continuously. If you suspect child sexual exploitation, also report it to the
+        <a href="https://report.cybertip.org/" target="_blank" rel="noopener">NCMEC CyberTipline</a>
+        or call 1-800-843-5678. Do not download, copy, or forward illegal material.
+      </div>
+
+      <form id="reportForm" action="https://formsubmit.co/blurredencounters69@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="URGENT: Blurred Encounters Safety Report">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_url" value="https://blurredencounters.github.io/report-abuse.html">
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none">
+
+        <div class="form-grid">
+          <div class="field">
+            <label for="reporterEmail">Your email</label>
+            <input id="reporterEmail" name="Reporter email" type="email" maxlength="120"
+                   autocomplete="email" required>
+          </div>
+
+          <div class="field">
+            <label for="reporterAlias">Your alias (optional)</label>
+            <input id="reporterAlias" name="Reporter alias" type="text" maxlength="40"
+                   autocomplete="nickname">
+          </div>
+
+          <div class="field">
+            <label for="reportedAlias">Reported alias, username, or page</label>
+            <input id="reportedAlias" name="Reported alias or page" type="text" maxlength="120" required>
+          </div>
+
+          <div class="field">
+            <label for="category">Report category</label>
+            <select id="category" name="Report category" required>
+              <option value="">Choose one</option>
+              <option>Suspected minor or child exploitation</option>
+              <option>Threat, blackmail, or extortion</option>
+              <option>Non-consensual intimate content</option>
+              <option>Recording or screenshot violation</option>
+              <option>Harassment, hate, or stalking</option>
+              <option>Impersonation or fraud</option>
+              <option>Pressure to meet offline</option>
+              <option>Other serious violation</option>
+            </select>
+          </div>
+
+          <div class="field full">
+            <label for="location">Relevant link, room, date, or approximate time</label>
+            <input id="location" name="Location or time" type="text" maxlength="300"
+                   placeholder="Example: lounge name, profile link, and approximate time">
+          </div>
+
+          <div class="field full">
+            <label for="details">What happened?</label>
+            <textarea id="details" name="Report details" maxlength="3000" required
+                      placeholder="Describe the conduct and include only necessary facts. Do not paste illegal images or sensitive identification."></textarea>
+          </div>
+
+          <div class="field full">
+            <div class="consent">
+              <input id="truthful" name="Truthful report confirmation" type="checkbox"
+                     value="I believe this report is truthful and made in good faith" required>
+              <label for="truthful">I believe this report is truthful and made in good faith.</label>
+            </div>
+          </div>
+
+          <div class="field full">
+            <button class="btn" id="reportSubmit" type="submit">Send Safety Report</button>
+            <p class="small">Submitting false or malicious reports may violate the Community Guidelines.
+            Preserve relevant details, but do not collect or redistribute illegal material.</p>
+            <div class="status" id="reportStatus" role="status" aria-live="polite"></div>
+          </div>
+        </div>
+      </form>
+
+      <div class="navbox">
+        <a href="community-guidelines.html">Community Guidelines</a>
+        <a href="safety.html">Safety Rules</a>
+        <a href="moderation.html">Moderation Process</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </div>
+    </main>
+
+    <footer>© <span id="year"></span> Blurred Encounters ·
+      <a href="mailto:blurredencounters69@gmail.com">blurredencounters69@gmail.com</a>
+    </footer>
+  </div>
+
+  <script>
+    "use strict";
+    const businessEmail = "blurredencounters69@gmail.com";
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const form = document.getElementById("reportForm");
+    const button = document.getElementById("reportSubmit");
+    const statusBox = document.getElementById("reportStatus");
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      button.disabled = true;
+      button.textContent = "Sending…";
+      statusBox.className = "status";
+      statusBox.textContent = "";
+
+      try {
+        const payload = Object.fromEntries(new FormData(form).entries());
+        const response = await fetch("https://formsubmit.co/ajax/" + businessEmail, {
+          method: "POST",
+          headers: {"Content-Type":"application/json","Accept":"application/json"},
+          body: JSON.stringify(payload)
+        });
+        const result = await response.json();
+
+        if (!response.ok || result.success === false || result.success === "false") {
+          throw new Error(result.message || "Unable to submit.");
+        }
+
+        form.reset();
+        statusBox.className = "status success";
+        statusBox.textContent = "Your safety report was submitted.";
+      } catch (error) {
+        console.error(error);
+        statusBox.className = "status error";
+        statusBox.innerHTML = 'The form could not send. Email <a href="mailto:' +
+          businessEmail + '">' + businessEmail + '</a>.';
+      } finally {
+        button.disabled = false;
+        button.textContent = "Send Safety Report";
+      }
+    });
+  </script>
+</body>
+</html>
